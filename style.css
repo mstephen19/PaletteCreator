@@ -1,0 +1,110 @@
+body {
+  width: 100vw;
+}
+/*container cover whole page*/
+#boxesContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*first 2 boxes*/
+#first2 {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*second 2 boxes*/
+#second2 {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*all boxes*/
+.boxes {
+  flex: 1 1 25%;
+  height: 100vh;
+  width: 25%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  width: 75%;
+  height: 25%;
+  background: rgba(0, 0, 0, 0.473);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.textAreas {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  overflow: hidden;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: none;
+  resize: none;
+  text-align: center;
+  color: white;
+  width: 75%;
+  height: 30px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.btns {
+  text-align: center;
+  background: none;
+  width: 55%;
+  height: 20%;
+  font-size: 1.3rem;
+  padding: none;
+  border-radius: 5px;
+  /*flexing text within btn*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#saveBtn {
+  position: fixed;
+  right: 2%;
+  top: 2%;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  font-size: 1.3rem;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .boxes {
+    height: 50vh;
+    width: 50%;
+  }
+  #boxesContainer {
+    flex-wrap: wrap;
+  }
+  .cards {
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .btns {
+    font-size: 0.9rem;
+  }
+}
