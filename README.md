@@ -1,0 +1,2 @@
+# PaletteCreator
+Fun personal project.
