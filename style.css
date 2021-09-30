@@ -1,6 +1,11 @@
 body {
   width: 100vw;
 }
+
+* {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 /*container cover whole page*/
 #boxesContainer {
   width: 100vw;
@@ -37,12 +42,13 @@ body {
 .cards {
   width: 75%;
   height: 25%;
-  background: rgba(0, 0, 0, 0.473);
+  background: rgba(194, 194, 194, 0.473);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px black;
 }
 
 .textAreas {
@@ -51,7 +57,7 @@ body {
   appearance: none;
   border: none;
   overflow: hidden;
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   background: none;
   resize: none;
@@ -63,31 +69,52 @@ body {
   font-size: 1.5rem;
 }
 
-.btns {
-  text-align: center;
-  background: none;
-  width: 55%;
-  height: 20%;
-  font-size: 1.3rem;
-  padding: none;
-  border-radius: 5px;
-  /*flexing text within btn*/
+button {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-align: center;
+  font-size: 1.3rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: all 0.1s linear;
 }
 
-#saveBtn {
+.btns {
+  background: none;
+  width: 55%;
+  height: 20%;
+  color: black;
+  box-shadow: -2px 4px 0px black;
+}
+
+.btns:active{
+  box-shadow: -1px 1px 0px black;
+  transform: translate(-1px, 3px);
+}
+
+.saveBtn {
   position: fixed;
   right: 2%;
   top: 2%;
-  text-align: center;
   width: 100px;
   height: 50px;
-  font-size: 1.3rem;
   background: none;
-  cursor: pointer;
+  color: white;
+  box-shadow: -3px 5px 0px black;
+  background: rgb(20, 189, 20);
+  font-weight: bold;
+}
+
+.saveBtn:active{
+  box-shadow: -1px 2px 0px black;
+  transform: translate(-2px, 3px);
+}
+
+#saveBtnAfter {
+  background-color: red;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 1024px) {

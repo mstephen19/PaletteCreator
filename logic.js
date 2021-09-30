@@ -8,6 +8,7 @@ $(document).ready(function(){
     var pulledSave = JSON.parse(localStorage.getItem('userSaveColorCodes'));
     for (let i = 0; i < allBoxes.length; i++){
       allBoxes[i].style.background = pulledSave[i];
+      textAreas[i].value = pulledSave[i];
     }
   });
 
@@ -24,12 +25,30 @@ $(document).ready(function(){
     colorBox.css('background', genCode);
   });
   
-  function saveAll(){
+  function saveAll(event){
+    theBtn = event.target;
     for (let i = 0; i < genBtns.length; i++){
-      savedCodes[i] = textAreas[i].value
+      savedCodes[i] = textAreas[i].value;
     }
-    localStorage.setItem('userSaveColorCodes', JSON.stringify(savedCodes))
+    localStorage.setItem('userSaveColorCodes', JSON.stringify(savedCodes));
+    $('.saveBtn').attr('id', 'saveBtnAfter').text('Saved Successfully');
+    setTimeout(function(){
+      $('.saveBtn').removeAttr('id').text('Save');
+    }, 1000);
   }
-  
-  $('#saveBtn').on('click', saveAll);
-})
+
+  $('.saveBtn').on('click', saveAll);
+
+  function copyValue(event){
+    clickedArea = event.target;
+    clickedArea.select();
+    document.execCommand('copy');
+    let saveInit = clickedArea.value
+    clickedArea.value = 'Copied!'
+    setTimeout(function(){
+      clickedArea.value = saveInit;
+    }, 1000);
+  }
+
+  textAreas.on('click', copyValue)
+});
